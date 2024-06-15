@@ -1,0 +1,676 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 전체 */
+body {
+  background-color: #eae8fe;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 공통 */
+img {
+  width: 36px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+#container {
+  width: 748px;
+  margin: 0px auto;
+}
+
+main {
+  width: 748px;
+  height: 545px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  cursor: pointer;
+}
+
+.ir {
+  display: none;
+}
+
+/** PC 화면 ***************/
+
+@media only screen and (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
+
+  header > img {
+    margin-bottom: 67px;
+    width: 436px;
+    height: 204px;
+    background-color: #eae8fe;
+  }
+
+  /* 자판기 */
+  .vendingMachine {
+    width: 360px;
+    height: 545px;
+    background-color: #fff;
+    padding: 10px 0px 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .listCola {
+    width: 306px;
+    height: 272px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+    margin: 0px 0px 10px;
+  }
+
+  .listCola > li {
+    height: 130px;
+    flex: 1 1 auto; /* flex-grow와 flex-shrink를 사용해 자동으로 크기 조정 */
+    max-width: calc(50% - 24px); /* 두 열로 (12px padding 고려) */
+  }
+
+  .btnCola {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9px;
+    box-sizing: border-box;
+    width: 94px;
+    height: 130px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px gray;
+  }
+
+  .btnCola > img {
+    margin: 2px 0px 6px;
+  }
+  .btnCola > strong {
+    margin: 0px 1px 7px 2px;
+    font-size: 9px;
+  }
+
+  .btnCola > span {
+    background-color: #6327fe;
+    color: #fff;
+    border-radius: 50px;
+    padding: 5px;
+    margin: 0px 2px 0px 4px;
+    font-size: 12px;
+  }
+
+  /* 거스름돈 반환 div */
+  .balanceReturn {
+    width: 306px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .balanceInfo {
+    width: 180px;
+    height: 20px;
+    background-color: #eae8fe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .btnReturn {
+    width: 94px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px gray;
+    font-size: 13px;
+  }
+
+  /* 입금 div */
+  .balanceInsert {
+    width: 306px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .insertInput {
+    width: 200px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 1px #bdbdbd solid;
+    border-radius: 5px;
+  }
+
+  /* number input 버튼 없애기 */
+  .insertInput::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  .btnInsert {
+    width: 94px;
+    height: 32px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px gray;
+    background-color: #fff;
+  }
+
+  /* 콜라 선택창 div */
+  .colaSelected {
+    width: 306px;
+    height: 106px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .colaSelected > .colaStack {
+    width: 200px;
+    height: 100px;
+  }
+
+  .colaSelected > .colaStack > .colaStackItem {
+    width: 170px;
+    height: 46px;
+    margin: 6px auto;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .btnGet {
+    width: 94px;
+    height: 106px;
+    border-radius: 5px;
+    border: none;
+    background-color: #6327fe;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 5px gray;
+    flex: 0 0 auto;
+    margin-left: 10px; /* 버튼을 왼쪽으로 밀어내기 */
+  }
+
+  /* 내 정보 */
+
+  .myBalance {
+    width: 360px;
+    height: 50px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 9px 27px;
+  }
+
+  .myMoney {
+    width: 306px;
+    height: 32px;
+    box-sizing: border-box;
+    padding: 8px 10px 6px;
+    background-color: #eae8fe;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .myMoneyText {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  /* 획득한 음료 */
+
+  .getCola {
+    width: 360px;
+    height: 474px;
+    margin-top: 20px;
+    padding: 25px 27px;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+
+  .getColaTitle {
+    display: flex;
+    justify-content: center;
+  }
+
+  .getCola > .colaStack {
+    width: 306px;
+    height: 364px;
+  }
+
+  .getCola > .colaStack > .colaStackItem {
+    width: 276px;
+    height: 46px;
+    margin: 6px auto;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /* ul 공통 부분 */
+
+  .colaStack {
+    background-color: #eae8fe;
+    padding-top: 6px;
+    overflow-y: scroll !important;
+    -ms-overflow-style: scrollbar;
+  }
+
+  /*스크롤바 설정*/
+  .colaSelected > .colaStack::-webkit-scrollbar {
+    width: 12px;
+    height: 106px;
+    box-sizing: content-box;
+  }
+
+  .getCola > .colaStack::-webkit-scrollbar {
+    width: 12px;
+    height: 364px;
+    box-sizing: content-box;
+  }
+
+  .colaStack::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    height: 79px;
+    border-radius: 50px;
+    background-clip: padding-box;
+    border: 4px solid transparent;
+  }
+
+  .colaStack::-webkit-scrollbar-track {
+    background-color: #eae8fe;
+  }
+
+  .colaStack::-webkit-scrollbar-button {
+    height: 5px;
+    background-color: transparent;
+  }
+
+  /* li 태그 */
+
+  .colaStackItem {
+    background-color: #fff;
+  }
+
+  .colaStackItem > img {
+    width: 18px;
+    height: 33px;
+    margin: 6px 0px 7px 10px;
+  }
+
+  .textItem {
+    font-size: 9px;
+    margin-left: 10px;
+  }
+
+  .countCola {
+    margin: 8px 8px 8px auto;
+    padding: 7px 9.87px;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+  }
+
+  .total {
+    margin-top: 6px;
+    margin-left: 197px;
+    font-size: 12px;
+    font-weight: normal;
+    width: 109px;
+    height: 20px;
+    display: flex;
+    justify-content: end;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #container {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {
+    width: 166px;
+    height: 78px;
+  }
+
+  header > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /** 자판기 **/
+  .vendingMachine {
+    margin: 8px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .listCola {
+    width: 306px;
+    height: 272px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    overflow: auto;
+    padding: 10px 12px;
+    margin: 0px 0px 10px;
+  }
+
+  .listCola > li {
+    height: 130px;
+  }
+
+  .btnCola {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9px;
+    box-sizing: border-box;
+    width: 94px;
+    height: 130px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px gray;
+  }
+
+  .btnCola > img {
+    margin: 2px 0px 6px;
+  }
+  .btnCola > strong {
+    margin: 0px 1px 7px 2px;
+    font-size: 9px;
+  }
+
+  .btnCola > span {
+    background-color: #6327fe;
+    color: #fff;
+    border-radius: 50px;
+    padding: 5px;
+    margin: 0px 2px 0px 4px;
+    font-size: 12px;
+  }
+
+  /* 거스름돈 반환 div */
+  .balanceReturn {
+    width: 306px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .balanceInfo {
+    width: 180px;
+    height: 20px;
+    background-color: #eae8fe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .btnReturn {
+    width: 94px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px gray;
+    font-size: 13px;
+  }
+
+  /* 입금 div */
+  .balanceInsert {
+    width: 306px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .insertInput {
+    width: 200px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 1px #bdbdbd solid;
+    border-radius: 5px;
+  }
+
+  /* number input 버튼 없애기 */
+  .insertInput::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  .btnInsert {
+    width: 94px;
+    height: 32px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px gray;
+    background-color: #fff;
+  }
+
+  /* 콜라 선택창 div */
+  .colaSelected {
+    width: 306px;
+    height: 106px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .colaSelected > .colaStack {
+    width: 200px;
+    height: 100px;
+  }
+
+  .colaSelected > .colaStack > .colaStackItem {
+    width: 170px;
+    height: 46px;
+    margin: 6px auto;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .btnGet {
+    width: 94px;
+    height: 106px;
+    border-radius: 5px;
+    border: none;
+    background-color: #6327fe;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 5px gray;
+    flex: 0 0 auto;
+    margin-left: 10px; /* 버튼을 왼쪽으로 밀어내기 */
+  }
+
+  /* 내 정보 */
+
+  .myInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .myBalance {
+    width: 360px;
+    height: 50px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 9px 27px;
+  }
+
+  .myMoney {
+    width: 306px;
+    height: 32px;
+    box-sizing: border-box;
+    padding: 8px 10px 6px;
+    background-color: #eae8fe;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .myMoneyText {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  /* 획득한 음료 */
+
+  .getCola {
+    width: 360px;
+    height: 474px;
+    margin-top: 20px;
+    padding: 25px 27px;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+
+  .getColaTitle {
+    display: flex;
+    justify-content: center;
+  }
+
+  .getCola > .colaStack {
+    width: 306px;
+    height: 364px;
+  }
+
+  .getCola > .colaStack > .colaStackItem {
+    width: 276px;
+    height: 46px;
+    margin: 6px auto;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /* ul 공통 부분 */
+
+  .colaStack {
+    background-color: #eae8fe;
+    padding-top: 6px;
+    overflow-y: scroll !important;
+    -ms-overflow-style: scrollbar;
+  }
+
+  /*스크롤바 설정*/
+  .colaSelected > .colaStack::-webkit-scrollbar {
+    width: 12px;
+    height: 106px;
+    box-sizing: content-box;
+  }
+
+  .getCola > .colaStack::-webkit-scrollbar {
+    width: 12px;
+    height: 364px;
+    box-sizing: content-box;
+  }
+
+  .colaStack::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    height: 79px;
+    border-radius: 50px;
+    background-clip: padding-box;
+    border: 4px solid transparent;
+  }
+
+  .colaStack::-webkit-scrollbar-track {
+    background-color: #eae8fe;
+  }
+
+  .colaStack::-webkit-scrollbar-button {
+    height: 5px;
+    background-color: transparent;
+  }
+
+  /* li 태그 */
+
+  .colaStackItem {
+    background-color: #fff;
+  }
+
+  .colaStackItem > img {
+    width: 18px;
+    height: 33px;
+    margin: 6px 0px 7px 10px;
+  }
+
+  .textItem {
+    font-size: 9px;
+    margin-left: 10px;
+  }
+
+  .countCola {
+    margin: 8px 8px 8px auto;
+    padding: 7px 9.87px;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+  }
+
+  .total {
+    margin-top: 6px;
+    margin-left: 197px;
+    font-size: 12px;
+    font-weight: normal;
+    width: 109px;
+    height: 20px;
+    display: flex;
+    justify-content: end;
+  }
+}
